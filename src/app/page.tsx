@@ -1,7 +1,8 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { FaLeaf, FaRecycle, FaWater, FaTemperatureHigh, FaClock } from 'react-icons/fa';
 import Link from 'next/link';
+import PledgeModal from '@/components/PledgeModal';
 
 const EnvironmentCampaign = () => {
   const [timeLeft, setTimeLeft] = React.useState({
@@ -12,6 +13,8 @@ const EnvironmentCampaign = () => {
     minutes: 0,
     seconds: 0
   });
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   React.useEffect(() => {
     const calculateTimeLeft = () => {
@@ -167,8 +170,11 @@ const EnvironmentCampaign = () => {
               작은 실천이 모여 큰 변화를 만듭니다.
               지금 바로 환경 보호 캠페인에 동참해보세요!
             </p>
-            <button className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition-colors">
-              캠페인 참여하기
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition-colors"
+            >
+              실천 서약하기
             </button>
           </div>
         </div>
@@ -180,6 +186,12 @@ const EnvironmentCampaign = () => {
           <p>© 2024 환경 보호 캠페인. 모든 권리 보유.</p>
         </div>
       </footer>
+
+      <PledgeModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        type="campaign"
+      />
     </div>
   );
 };
