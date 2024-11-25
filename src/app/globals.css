@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 기본 스타일 */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* 다크모드 설정이 필요한 경우 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* 애니메이션 관련 스타일 */
+@layer utilities {
+  .animate-water-drop {
+    animation: water-drop 1.5s infinite;
+  }
+  
+  .animate-shower-stream {
+    animation: shower-stream 0.8s infinite;
+  }
+  
+  .animate-rain-fall {
+    animation: rain-fall 1s infinite;
+  }
+}
