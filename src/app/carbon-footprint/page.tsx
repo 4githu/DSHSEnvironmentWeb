@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { FaLeaf, FaHome, FaCar, FaShoppingBag, FaLightbulb, FaRecycle } from 'react-icons/fa';
+import { FaLeaf, FaHome, FaCar, FaShoppingBag} from 'react-icons/fa';
 import Link from 'next/link';
 
 const CarbonFootprint = () => {

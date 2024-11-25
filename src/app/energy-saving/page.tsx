@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { FaTemperatureHigh, FaPowerOff, FaLightbulb, FaSun } from 'react-icons/fa';
+import { FaTemperatureHigh, FaPowerOff, FaLightbulb} from 'react-icons/fa';
 
 const Thermostat = ({ isOn, temperature, onToggle, onTempChange }) => {
   return (
