@@ -174,7 +174,7 @@ const EnvironmentCampaign = () => {
               onClick={() => setIsModalOpen(true)}
               className="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition-colors"
             >
-              실천 서약하기
+              환경 보호 캠페인 참여하기
             </button>
           </div>
         </div>
