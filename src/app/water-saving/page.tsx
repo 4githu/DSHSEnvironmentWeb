@@ -2,6 +2,18 @@
 import React, { useState } from 'react';
 import { FaWater, FaShower, FaCloudRain, FaTint } from 'react-icons/fa';
 
+type AnimationId = 'tap' | 'shower' | 'rainwater' | 'saving';
+
+interface WaterSavingItem {
+  id: AnimationId;
+  title: string;
+  icon: React.ReactNode;
+  content: string;
+  details: string[];
+  animationType: string;
+  savingAmount: string;
+}
+
 const WaterAnimation = ({ isRunning, type }: { isRunning: boolean, type: string }) => {
   return (
     <div className="relative h-60 w-full max-w-[200px] mx-auto">
@@ -87,14 +99,14 @@ const WaterAnimation = ({ isRunning, type }: { isRunning: boolean, type: string 
 
 export default function WaterSavingPage() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [runningAnimations, setRunningAnimations] = useState({
+  const [runningAnimations, setRunningAnimations] = useState<Record<AnimationId, boolean>>({
     tap: true,
     shower: true,
     rainwater: true,
     saving: true
   });
 
-  const waterSavingData = [
+  const waterSavingData: WaterSavingItem[] = [
     {
       id: 'tap',
       title: '양치컵 사용하기',
