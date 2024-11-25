@@ -2,7 +2,14 @@
 import React, { useState } from 'react';
 import { FaTemperatureHigh, FaPowerOff, FaLightbulb} from 'react-icons/fa';
 
-const Thermostat = ({ isOn, temperature, onToggle, onTempChange }) => {
+interface ThermostatProps {
+  isOn: boolean;
+  temperature: number;
+  onToggle: () => void;
+  onTempChange: (delta: number) => void;
+}
+
+const Thermostat = ({ isOn, temperature, onToggle, onTempChange }: ThermostatProps) => {
   return (
     <div className="relative w-48 h-48 mx-auto">
       <div 
@@ -38,7 +45,12 @@ const Thermostat = ({ isOn, temperature, onToggle, onTempChange }) => {
   );
 };
 
-const LightSwitch = ({ isOn, onToggle }) => {
+interface LightSwitchProps {
+  isOn: boolean;
+  onToggle: () => void;
+}
+
+const LightSwitch = ({ isOn, onToggle }: LightSwitchProps) => {
   return (
     <div className="relative w-32 h-48 mx-auto">
       <div 
