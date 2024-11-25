@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { FaCar, FaLightbulb } from 'react-icons/fa';
 import PledgeModal from '@/components/PledgeModal';
 
 export default function CarbonFootprintPage() {
