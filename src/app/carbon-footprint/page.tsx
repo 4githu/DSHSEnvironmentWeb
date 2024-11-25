@@ -1,32 +1,10 @@
 'use client';
 import React, { useState } from 'react';
-import { FaCar, FaLeaf, FaLightbulb, FaRecycle } from 'react-icons/fa';
+import { FaCar, FaLightbulb } from 'react-icons/fa';
 import PledgeModal from '@/components/PledgeModal';
 
 export default function CarbonFootprintPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const carbonReductionTips = [
-    {
-      icon: <FaCar className="w-8 h-8 text-green-500" />,
-      title: "교통",
-      tips: [
-        "대중교통 이용하기",
-        "자전거나 도보 이용",
-        "친환경 자동차 사용"
-      ]
-    },
-    {
-      icon: <FaLightbulb className="w-8 h-8 text-green-500" />,
-      title: "에너지",
-      tips: [
-        "불필요한 전등 끄기",
-        "대기전력 차단하기",
-        "에너지효율 제품 사용"
-      ]
-    },
-    // ... 기존 팁 내용들 ...
-  ];
 
   return (
     <div className="min-h-screen bg-green-100">

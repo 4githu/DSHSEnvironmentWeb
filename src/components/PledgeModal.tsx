@@ -1,7 +1,6 @@
 "use client"
 import { useState } from 'react';
 import confetti from 'canvas-confetti';
-import type { Options as ConfettiOptions } from 'canvas-confetti';
 
 interface PledgeModalProps {
   isOpen: boolean;
@@ -49,17 +48,6 @@ export default function PledgeModal({ isOpen, onClose, type }: PledgeModalProps)
     setEmail('');
     setOrganization('');
     onClose();
-  };
-
-  const handleSubmit = () => {
-    if (agreed && name && (type !== 'campaign' || email)) {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
-      handleClose();
-    }
   };
 
   return (
@@ -119,7 +107,7 @@ export default function PledgeModal({ isOpen, onClose, type }: PledgeModalProps)
 
         <div className="flex gap-4">
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="flex-1 px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300"
           >
             취소
@@ -132,7 +120,7 @@ export default function PledgeModal({ isOpen, onClose, type }: PledgeModalProps)
                   spread: 70,
                   origin: { y: 0.6 }
                 });
-                onClose();
+                handleClose();
               }
             }}
             disabled={!agreed || !name || (type === 'campaign' && !email)}
