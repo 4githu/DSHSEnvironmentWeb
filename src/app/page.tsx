@@ -18,7 +18,7 @@ const EnvironmentCampaign = () => {
 
   React.useEffect(() => {
     const calculateTimeLeft = () => {
-      const targetDate = new Date('2030-01-01').getTime();
+      const targetDate = new Date('2029-07-21').getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -110,7 +110,7 @@ const EnvironmentCampaign = () => {
                 <h2 className="text-2xl font-bold text-white">기후 위기 시계</h2>
               </div>
               <p className="text-gray-300 text-center mb-8">
-                지구 평균 기온 1.5°C 상승까지 남은 시간 (2050년 기준)
+                지구 평균 기온 1.5°C 상승까지 남은 시간
               </p>
               <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
                 {[
