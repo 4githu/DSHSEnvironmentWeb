@@ -18,7 +18,7 @@ const EnvironmentCampaign = () => {
 
   React.useEffect(() => {
     const calculateTimeLeft = () => {
-      const targetDate = new Date('2050-01-01').getTime();
+      const targetDate = new Date('2030-01-01').getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
@@ -101,34 +101,36 @@ const EnvironmentCampaign = () => {
         </div>
       </header>
       {/* 카운트다운 타이머 섹션 */}
-      <div className="bg-gray-900 py-12">
-        <div className="container mx-auto px-4">
-          <div className="bg-gray-800 rounded-xl p-8 max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <FaClock className="w-8 h-8 text-red-500" />
-              <h2 className="text-2xl font-bold text-white">기후 위기 시계</h2>
-            </div>
-            <p className="text-gray-300 text-center mb-8">
-              지구 평균 기온 1.5°C 상승까지 남은 시간 (2050년 기준)
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-              {[
-                { value: timeLeft.years, label: "년" },
-                { value: timeLeft.months, label: "월" },
-                { value: timeLeft.days, label: "일" },
-                { value: timeLeft.hours, label: "시간" },
-                { value: timeLeft.minutes, label: "분" },
-                { value: timeLeft.seconds, label: "초" }
-              ].map((item, index) => (
-                <div key={index} className="bg-red-600 p-4 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-white">{item.value}</div>
-                  <div className="text-sm text-white">{item.label}</div>
-                </div>
-              ))}
+      <Link href="/timer">
+        <div className="bg-gray-900 py-12 cursor-pointer hover:bg-gray-800 transition-colors">
+          <div className="container mx-auto px-4">
+            <div className="bg-gray-800 rounded-xl p-8 max-w-4xl mx-auto">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <FaClock className="w-8 h-8 text-red-500" />
+                <h2 className="text-2xl font-bold text-white">기후 위기 시계</h2>
+              </div>
+              <p className="text-gray-300 text-center mb-8">
+                지구 평균 기온 1.5°C 상승까지 남은 시간 (2050년 기준)
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+                {[
+                  { value: timeLeft.years, label: "년" },
+                  { value: timeLeft.months, label: "월" },
+                  { value: timeLeft.days, label: "일" },
+                  { value: timeLeft.hours, label: "시간" },
+                  { value: timeLeft.minutes, label: "분" },
+                  { value: timeLeft.seconds, label: "초" }
+                ].map((item, index) => (
+                  <div key={index} className="bg-red-600 p-4 rounded-lg text-center">
+                    <div className="text-3xl font-bold text-white">{item.value}</div>
+                    <div className="text-sm text-white">{item.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       {/* 메인 콘텐츠 */}
       <main className="container mx-auto px-4 py-16">
