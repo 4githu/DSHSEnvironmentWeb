@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { FaClock, FaChartLine, FaExclamationTriangle, FaArrowLeft, FaThermometerHalf, FaWater, FaGlobe } from 'react-icons/fa';
+import { FaExclamationTriangle, FaArrowLeft, FaThermometerHalf, FaWater, FaGlobe } from 'react-icons/fa';
 import Link from 'next/link';
 
 const TimerPage = () => {
