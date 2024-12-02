@@ -185,7 +185,7 @@ const EnvironmentCampaign = () => {
       {/* 푸터 */}
       <footer className="bg-gray-800 text-white py-8 mt-20">
         <div className="container mx-auto px-4 text-center">
-          <p>© 2024 환경 보호 캠페인. 모든 권리 보유.</p>
+          <p>© 2110 김지후 | 2024 환경 보호 캠페인. 모든 권리 보유.</p>
         </div>
       </footer>
 
