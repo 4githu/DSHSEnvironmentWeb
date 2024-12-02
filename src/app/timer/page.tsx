@@ -138,7 +138,7 @@ const TimerPage = () => {
         {/* 경고 지표 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {warningData.map((item, index) => (
-            <Link href={item.path} key={index} className="block">
+            <Link href={item.path} key={index} className="block" target="_blank">
                 <div className="bg-gray-800 p-8 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
                     {item.icon}
@@ -154,7 +154,7 @@ const TimerPage = () => {
         {/* 영향 분석 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {impactData.map((section, index) => (
-            <Link href={section.path} key={index} className="block">
+            <Link href={section.path} key={index} className="block" target="_blank">
                 <div className="bg-gray-800 p-8 rounded-xl">
                 <h3 className="text-xl font-bold text-white mb-6">{section.title}</h3>
                 <ul className="space-y-4">
