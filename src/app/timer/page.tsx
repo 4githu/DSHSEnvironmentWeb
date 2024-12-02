@@ -39,23 +39,25 @@ const TimerPage = () => {
   }, []);
 
   const warningData = [
-    {
-      icon: <FaThermometerHalf className="w-8 h-8 text-red-500" />,
+    {         icon: <FaThermometerHalf className="w-8 h-8 text-red-500" />,
       title: "현재 지구 평균 기온 상승",
       value: "1.297°C",
-      description: "지난 12개월 동안 평균 1.5°C를 꾸준히 초과"
+      description: "지난 12개월 동안 평균 1.5°C를 꾸준히 초과",
+      path: "https://www.bbc.com/news/articles/c1dpnxnvv2go"
     },
     {
       icon: <FaWater className="w-8 h-8 text-blue-500" />,
       title: "해수면 상승",
       value: "3.3mm/년",
-      description: "2°C 상승 시 10cm 더 상승 예상"
+      description: "2°C 상승 시 10cm 더 상승 예상",
+      path: "https://www.cbsnews.com/news/increased-threats-of-sea-level-rise-worldwide/"
     },
     {
       icon: <FaGlobe className="w-8 h-8 text-green-500" />,
       title: "생태계 위험",
-      value: "70%",
-      description: "산호초 멸종 위험도"
+      value: "최소 40%",
+      description: "산호초 멸종 위험도",
+      path: "https://abcnews.go.com/US/climate-change-threatening-40-worlds-corals-extinction-conservation/story?id=115769573"
     }
   ];
 
@@ -67,7 +69,8 @@ const TimerPage = () => {
         "극단적 강수 사건 빈번화",
         "장기 가뭄 위험 증가",
         "태풍 강도 증가"
-      ]
+      ],
+      path: "https://science.nasa.gov/climate-change/extreme-weather/"
     },
     {
       title: "생태계 영향",
@@ -76,7 +79,8 @@ const TimerPage = () => {
         "해양 생태계 파괴",
         "영구 동토층 해빙",
         "산림 파괴 가속화"
-      ]
+      ],
+      path: "https://defenders.org/issues/combating-climate-change"
     },
     {
       title: "인류 생존 위협",
@@ -85,7 +89,8 @@ const TimerPage = () => {
         "물 부족 심화",
         "거주 불가능 지역 확대",
         "기후 난민 증가"
-      ]
+      ],
+      path: "https://www.zurich.com/media/magazine/2022/there-could-be-1-2-billion-climate-refugees-by-2050-here-s-what-you-need-to-know"
     }
   ];
 
@@ -133,31 +138,35 @@ const TimerPage = () => {
         {/* 경고 지표 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {warningData.map((item, index) => (
-            <div key={index} className="bg-gray-800 p-8 rounded-xl">
-              <div className="flex items-center gap-4 mb-4">
-                {item.icon}
-                <h3 className="text-xl text-white">{item.title}</h3>
-              </div>
-              <div className="text-4xl font-bold text-red-500 mb-2">{item.value}</div>
-              <p className="text-gray-400">{item.description}</p>
-            </div>
+            <Link href={item.path} key={index} className="block">
+                <div className="bg-gray-800 p-8 rounded-xl">
+                <div className="flex items-center gap-4 mb-4">
+                    {item.icon}
+                    <h3 className="text-xl text-white">{item.title}</h3>
+                </div>
+                <div className="text-4xl font-bold text-red-500 mb-2">{item.value}</div>
+                <p className="text-gray-400">{item.description}</p>
+                </div>
+            </Link>
           ))}
         </div>
 
         {/* 영향 분석 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {impactData.map((section, index) => (
-            <div key={index} className="bg-gray-800 p-8 rounded-xl">
-              <h3 className="text-xl font-bold text-white mb-6">{section.title}</h3>
-              <ul className="space-y-4">
-                {section.details.map((detail, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-gray-300">
-                    <FaExclamationTriangle className="w-5 h-5 text-yellow-500 mt-1" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Link href={section.path} key={index} className="block">
+                <div className="bg-gray-800 p-8 rounded-xl">
+                <h3 className="text-xl font-bold text-white mb-6">{section.title}</h3>
+                <ul className="space-y-4">
+                    {section.details.map((detail, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-gray-300">
+                        <FaExclamationTriangle className="w-5 h-5 text-yellow-500 mt-1" />
+                        <span>{detail}</span>
+                    </li>
+                    ))}
+                </ul>
+                </div>
+            </Link>
           ))}
         </div>
 
