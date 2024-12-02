@@ -10,7 +10,11 @@ export const metadata: Metadata = {
   title: '환경 보호 캠페인',
   description: '지구를 살리는 작은 실천',
   icons: {
-    icon: '/logo.png',
+    icon: [
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/logo.png',
+    shortcut: '/logo.png',
   },
 }
 
